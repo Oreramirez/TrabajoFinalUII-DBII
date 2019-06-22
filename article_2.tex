@@ -54,7 +54,7 @@
 \pagestyle{fancy} % All pages have headers and footers
 \fancyhead{} % Blank out the default header
 \fancyfoot{} % Blank out the default footer
-\fancyhead[C]{SQL Y NoSQL $\bullet$ Junio 2019 $\bullet$ Trabajo, Nro. 5} % Custom header text
+\fancyhead[C]{Comparación de despliegue de un gestor de base de datos NoSQL mediante Docke $\bullet$ Junio 2019 $\bullet$ Trabajo Final} % Custom header text
 \fancyfoot[RO,LE]{\thepage} % Custom footer text
 
 \usepackage{titling} % Customizing the title section
@@ -68,7 +68,7 @@
 
 \pretitle{\begin{center}\Huge\bfseries} % Article title formatting
 \posttitle{\end{center}} % Article title closing formatting
-\title{SQL Y NoSQL} % Article title
+\title{Comparación de despliegue de un gestor de base de datos NoSQL mediante Docker} % Article title
 \author{%
 \textsc{Marko Antonio Rivas Rios} \\[1ex] % Your name
 \textsc{Jorge Luis Mamani Maquera} \\[1.01ex] % Your name
@@ -83,10 +83,16 @@
 %\normalsize University of Utah \\ % Second author's institution
 %\normalsize \href{mailto:jane@smith.com}{jane@smith.com} % Second author's email address
 }
-\date{Junio 06, 2019} % Leave empty to omit a date
+\date{Junio 22, 2019} % Leave empty to omit a date
 \renewcommand{\maketitlehookd}{%
 \begin{abstract}
-\noindent Las bases de datos relacionales son una colección de elementos de datos organizados en un conjunto de tablas formalmente descritas desde la que se puede acceder a los datos o volver a montarlos de muchas maneras diferentes sin tener que reorganizar las tablas de la base. por otro lado las bases de datos NOSQL aparecieron como una necesidad para el  manejo de información  voluminosa y distribuida en los  grandes sitios web pero serán soluciones para las grandes empresas y las medianas empresas? solucionan los problemas que las bases de datos Relacionales solucionan?. Que tipo de problemas solucionan? Este artículo presenta este modelo y sus actuales logros y resultados.
+\noindent Docker is an open source project created in 2013 and which has been a revolution for the development and deployment of operations. Docker abstracts the host's hardware and operating system by running the applications in containers, isolated compartments that contain all the resources for an application or service.
+In this work we will see how to use Docker for the development of simple applications, learning how to deploy a NOSQL database with Docker.
+\end{abstract}
+\begin{abstract}
+\noindent Docker es un proyecto open source creado en 2013 y que ha supuesto una revolución para el desarrollo y despliegue de operaciones. Docker abstrae el hardware y el sistema operativo del host ejecutando las aplicaciones en contenedores, compartimentos aislados que contienen todos los recursos para una aplicación o servicio.
+
+En este trabajo veremos cómo usar Docker para el desarrollo de aplicaciones sencillas, aprendiendo a desplegar una base de datos NOSQL con Docker.
 \end{abstract}
 }
 
@@ -104,11 +110,9 @@
 
 \section{Introducción}
 
-\lettrine[nindent=0em,lines=2]{L}as bases de datos (BD) tradicionales son las relacionales que usan un lenguaje Estándar para su manipulación y gestión , el SQL que nace en 1974 basado en Modelo de EF COD. SQL tiene más de 37 años de vida. Son ejemplos de bases de datos relacionales: ORACLE, MYSQL, SQL Server, POTGRESS, DB2, etc..Su éxito se basó en que son una solución para los problemas de gestión y estructuración  de la información  de las organizaciones, con un fundamento matemático muy fuerte, lenguaje estandarizado (aceptado y adoptado)  para su gestión (SQL) , con metodologías estructuradas formales para el diseño de los sistemas de información de las organizaciones y con principios de diseño  como la regla ACID (atómica consistente aislada y Durable) . estas plataformas tienen muchas herramientas desarrolladas.\textbf{}\\
-Las bases de datos NOSQL son un conjunto de bases de datos que no se ajustan al modelo de bases de datos relacionales y sus características, estas no tienen esquemas  , no usan SQL ni permiten joins, no garantizan la propiedad ACID,  escalan horizontalmente, hacen uso amplio de la memoria principal del computador, resuelven el problema de los altos volúmenes de información y la inmensa cantidad de consultas y transacciones diarias, en resumen no son relacionales.\textbf{}\\
-Pero en qué consisten? Porque surgieron? cual es la mejor solución para un problema x determinado ¿ para qué tipo de problemas se debe considerar las alternativas NOSQL? Se debería usar una Solución NOSQL para un problema que tradicionalmente se ha resuelto con bases de datos relacionales? Que se debe tener en cuenta? Reemplazarán las bases de datos relacionales ?
-Este trabajo pretende dar algunas respuestas a estas inquietudes que genera la tecnología de bases de datos NOSQL que vienen en vertiginoso desarrollo , especialmente desde el 2009. La escalabilidad y su carácter descentralizado. Soportan estructuras distribuidas.
-
+\lettrine[nindent=0em,lines=2]{E}l potente concepto de Microservicios está cambiando poco a poco la industria. Grandes servicios monolíticos están dando paso lentamente al enjambre microservicios pequeños y autónomos que trabajan en conjunto. El proceso va acompañado de otra tendencia del mercado: la contenerización. Juntos, ayudan a construir sistemas  sin precedentes. La contenerización cambia no sólo la arquitectura de los servicios, sino también la estructura de ambientes utilizados para crearlos.
+\textbf{}\\
+Ahora, cuando el software se distribuye en contenedores, los desarrolladores tienen plena libertad para decidir qué aplicaciones necesitan. Como resultado, incluso los entornos complejos, como los servidores de grades bases de datos e infraestructura de análisis complejos pueden crear instancias en cuestión de segundos. El desarrollo de software se hace más fácil y más eficaz.
 
 \section{Objetivos}
 \begin{flushright}

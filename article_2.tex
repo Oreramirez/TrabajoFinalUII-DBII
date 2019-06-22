@@ -19,10 +19,11 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[twoside,twocolumn]{article}
+\documentclass[twoside,onecolumn]{article}
 
 \usepackage{blindtext} % Package to generate dummy text throughout this template 
-
+\usepackage{graphicx}
+\graphicspath{ {Imagenes/} }
 \usepackage[sc]{mathpazo} % Use the Palatino font
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
 \linespread{1.05} % Line spacing - Palatino needs more space between lines
@@ -53,7 +54,7 @@
 \pagestyle{fancy} % All pages have headers and footers
 \fancyhead{} % Blank out the default header
 \fancyfoot{} % Blank out the default footer
-\fancyhead[C]{Comparación BD NoSQL $\bullet$ Junio 2019 $\bullet$ Trabajo, Final UII} % Custom header text
+\fancyhead[C]{SQL Y NoSQL $\bullet$ Junio 2019 $\bullet$ Trabajo, Nro. 5} % Custom header text
 \fancyfoot[RO,LE]{\thepage} % Custom footer text
 
 \usepackage{titling} % Customizing the title section
@@ -67,7 +68,7 @@
 
 \pretitle{\begin{center}\Huge\bfseries} % Article title formatting
 \posttitle{\end{center}} % Article title closing formatting
-\title{Comparación BD NoSQL} % Article title
+\title{SQL Y NoSQL} % Article title
 \author{%
 \textsc{Marko Antonio Rivas Rios} \\[1ex] % Your name
 \textsc{Jorge Luis Mamani Maquera} \\[1.01ex] % Your name
@@ -85,7 +86,7 @@
 \date{Junio 06, 2019} % Leave empty to omit a date
 \renewcommand{\maketitlehookd}{%
 \begin{abstract}
-\noindent Las bases de datos relacionales son una colección de elementos de datos organizados en un conjunto de tablas formalmente descritas desde la que se puede acceder a los datos o volver a montarlos de muchas maneras diferentes sin tener que reorganizar las tablas de la base. por otro lado las bases de datos NOSQL aparecieron como una necesidad para el  manejo de información  voluminosa y distribuida en los  grandes sitios web pero serán soluciones para las grandes empresas y las medianas empresas? solucionan los problemas que las bases de datos Relacionales solucionan?. Hablar de bases de datos NoSQL es hablar de estructuras que nos permiten almacenar información en aquellas situaciones en las que las bases de datos relacionales generan ciertos problemas debido principalmente a problemas de escalabilidad y rendimiento de las bases de datos relacionales donde se dan cita miles de usuarios concurrentes y con millones de consultas diarias. Que tipo de problemas solucionan? Este artículo presenta este modelo y sus actuales logros y resultados.
+\noindent Las bases de datos relacionales son una colección de elementos de datos organizados en un conjunto de tablas formalmente descritas desde la que se puede acceder a los datos o volver a montarlos de muchas maneras diferentes sin tener que reorganizar las tablas de la base. por otro lado las bases de datos NOSQL aparecieron como una necesidad para el  manejo de información  voluminosa y distribuida en los  grandes sitios web pero serán soluciones para las grandes empresas y las medianas empresas? solucionan los problemas que las bases de datos Relacionales solucionan?. Que tipo de problemas solucionan? Este artículo presenta este modelo y sus actuales logros y resultados.
 \end{abstract}
 }
 
@@ -103,17 +104,18 @@
 
 \section{Introducción}
 
-\lettrine[nindent=0em,lines=2]{L}as bases de datos NoSQL (a veces llamado "no sólo SQL") es una amplia clase de sistemas de gestión de bases de datos que difieren del modelo clásico de SGBDR (Sistema de Gestión de Bases de Datos Relacionales) en aspectos importantes, siendo el más destacado que no usan SQL como lenguaje principal de consultas. Los datos almacenados no requieren estructuras fijas como tablas, normalmente no soportan operaciones JOIN, ni garantizan completamente ACID (atomicidad, consistencia, aislamiento y durabilidad) y habitualmente escalan bien horizontalmente. Los sistemas NoSQL se denominan a veces "no sólo SQL" para subrayar el hecho de que también pueden soportar lenguajes de consulta de tipo SQL.\textbf{}\\
-Aunque son conocidas desde la década de los 60 del pasado siglo, su auge actual viene determinado por el uso que, de estos sistemas han hecho las principales compañías de internet como Amazon, Google, Twitter y Facebook. Estas compañías tenían que enfrentarse a nuevos desafíos en el tratamiento de los datos motivados por el enorme crecimiento de la Web donde se requería dar respuesta a la necesidad de proporcionar información procesada a partir de grandes volúmenes de datos con unas estructuras horizontales, más o menos, similares y con aplicaciones web que debían dar respuesta a las peticiones de un número elevado e indeterminado de usuarios en el menor tiempo posible. Estas compañías se dieron cuenta de que el rendimiento y sus necesidades de tiempo real eran más importantes que la consistencia de los datos, aspecto este último al que las bases de datos relacionales tradicionales dedicaban una gran cantidad de tiempo de proceso.\textbf{}\\
+\lettrine[nindent=0em,lines=2]{L}as bases de datos (BD) tradicionales son las relacionales que usan un lenguaje Estándar para su manipulación y gestión , el SQL que nace en 1974 basado en Modelo de EF COD. SQL tiene más de 37 años de vida. Son ejemplos de bases de datos relacionales: ORACLE, MYSQL, SQL Server, POTGRESS, DB2, etc..Su éxito se basó en que son una solución para los problemas de gestión y estructuración  de la información  de las organizaciones, con un fundamento matemático muy fuerte, lenguaje estandarizado (aceptado y adoptado)  para su gestión (SQL) , con metodologías estructuradas formales para el diseño de los sistemas de información de las organizaciones y con principios de diseño  como la regla ACID (atómica consistente aislada y Durable) . estas plataformas tienen muchas herramientas desarrolladas.\textbf{}\\
+Las bases de datos NOSQL son un conjunto de bases de datos que no se ajustan al modelo de bases de datos relacionales y sus características, estas no tienen esquemas  , no usan SQL ni permiten joins, no garantizan la propiedad ACID,  escalan horizontalmente, hacen uso amplio de la memoria principal del computador, resuelven el problema de los altos volúmenes de información y la inmensa cantidad de consultas y transacciones diarias, en resumen no son relacionales.\textbf{}\\
+Pero en qué consisten? Porque surgieron? cual es la mejor solución para un problema x determinado ¿ para qué tipo de problemas se debe considerar las alternativas NOSQL? Se debería usar una Solución NOSQL para un problema que tradicionalmente se ha resuelto con bases de datos relacionales? Que se debe tener en cuenta? Reemplazarán las bases de datos relacionales ?
+Este trabajo pretende dar algunas respuestas a estas inquietudes que genera la tecnología de bases de datos NOSQL que vienen en vertiginoso desarrollo , especialmente desde el 2009. La escalabilidad y su carácter descentralizado. Soportan estructuras distribuidas.
 
 
 \section{Objetivos}
 \begin{flushright}
 \begin{itemize}
-\lettrine[nindent=0em,lines=2]{S}e busca saber un poco mas sobre:
+Se busca saber un poco mas sobre:
 \\
 %------------------------------------------------
-\textbf{}\\
 \textbf{}\\
 - Las bases de datos relacionales y no relacionales.
 \textbf{}\\
@@ -125,17 +127,15 @@ Aunque son conocidas desde la década de los 60 del pasado siglo, su auge actual
 
 
 
-\section{DESARROLLO}
+\section{SQL y NoSQL}
 
-\subsection{Maquinas Virtuales}
+\subsection{Base de datos SQL}
 
-Como su propio nombre indica, una máquina virtual (o VM a partir de ahora, de sus siglas en inglés: Virtual Machine) es un sistema operativo completo funcionando de manera aislada sobre otro sistema operativo completo.
+Structured Query language (SQL) o lenguaje de consulta estructurada, utiliza un estándar para manipular el contenido de las bases de datos relacionales. Cuenta con su propio lenguaje para consultar, insertar, actualizar y eliminar registros de la base de datos.\textbf{}\\
+Se compone de una o varias tablas y cada tabla puede contener múltiples relaciones. En el siguiente elemento pongo como ejemplo en como está estructurada una sencilla base de datos por medio de tablas.
 \textbf{}\\
 
-\textbf{IMAGEN}\\
-\begin{center}
-	\includegraphics[width=5cm]{./Imagenes/virtualizacion} 
-	\end{center}
+\includegraphics[scale=0.5]{sql1}
 \textbf{}\\
 Las tablas representan la entidad de cada modelo de datos. Las relaciones permiten garantizar la persistencia de datos, evita la duplicidad de datos y controla la eliminación en cascada. Para ingresar un nuevo nuevo evento, bastaría con ingresar un nuevo registro en la tabla events.\textbf{}\\
 SQL cuenta con un lenguaje de alto nivel que permite manipular la base de datos casi de cualquier forma. Por su manera de operar ayuda a mantener la integridad de los datos.
@@ -145,6 +145,9 @@ SQL cuenta con un lenguaje de alto nivel que permite manipular la base de datos 
 \textbf{}\\
 \textbf{}\\
 \textbf{}\\
+\textbf{}\\
+\textbf{}\\
+
  Por ejemplo:
 \textbf{}\\
 \textbf{}\\
@@ -160,9 +163,6 @@ INSERT INTO categories VALUES (Varonil, Femenil, mixto)
 \textbf{}\\
 Ejemplos de sistemas de gestión de base de datos son: MySQL, MariaDB, PostgreSQL.\textbf{}\\
 
- \textbf{}\\
-\textbf{}\\
-
 
 \subsection{Base de datos NoSQL}
 
@@ -176,11 +176,14 @@ Algunos tipos de bases de datos NoSQL incluyen diferentes tipos de almacenamient
 \textbf{}\\
 \textbf{}\\
 
+\includegraphics[scale=0.3]{sqlynosql}
 
+\textbf{}\\
 \subsection{Formatos}
+
 La información puede organizarse en tablas o en documentos. Cuando organizamos información en un Excel, lo hacemos en formato tabla y, cuando los médicos hacen fichas a sus pacientes, están guardando la información en documentos. Lo habitual es que las bases de datos basadas en tablas sean bases de datos relacionales y las basadas en documentos sean no relacionales, pero esto no tiene que ser siempre así. En realidad, una tabla puede transformarse en documentos, cada uno formado por cada fila de la tabla. Solo es una cuestión de visualización.
 \textbf{}\\
-\textbf{ IMAGEN nosql1}\\
+\includegraphics[scale=0.5]{nosql1}
 \textbf{}\\
 Los dos esquemas de la imagen contienen exactamente la misma información. Lo único que cambia aquí es el formato: cada documento de la figura de la derecha es una fila de la figura de la izquierda.
 \textbf{}\\
@@ -191,7 +194,7 @@ Se ve más claro en la tabla, ¿verdad? Lo que pasa es que a menudo en una base 
 Por ejemplo, en el documento JSON de la imagen que se muestra a continuación, al tener elementos jerárquicos, es más difícil plasmarlo en una tabla plana. Una solución sería plasmarlo en varias tablas y, por tanto, necesitar de relaciones.
 
 
-\textbf{ IMAGEN nosql2}\\
+\includegraphics[scale=0.5]{nosql2}
 
 Esto explica por qué las bases de datos relacionales suelen servirse de tablas y las no relacionales de documentos JSON. En cualquier caso, a día de hoy, \textbf{las bases de datos más competitivas suelen permitir, de una forma u otra, operaciones de los dos tipos.}\\ 
 \textbf{}\\
@@ -217,7 +220,10 @@ Esto explica por qué las bases de datos relacionales suelen servirse de tablas 
 \textbf{}\\
 -	Los datos deben cumplir requisitos de integridad tanto en tipo de dato como en compatibilidad.\\
 \textbf{}\\
-
+\textbf{}\\
+\textbf{}\\
+\textbf{}\\
+\textbf{}\\
 \textbf{Desventajas de las Bases de Datos relacionales}\\
 
 -	La atomicidad de las operaciones juega un papel crucial en el rendimiento de las bases de datos.\\
@@ -346,6 +352,8 @@ es/definicion/virtualizacion-basada-en-contenedores-virtualizacion-a-nivel-de-si
 \newblock {\em }
  
 \end{thebibliography}
+
+
 
 %----------------------------------------------------------------------------------------
 \end{itemize}

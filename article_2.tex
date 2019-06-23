@@ -68,7 +68,7 @@
 
 \pretitle{\begin{center}\Huge\bfseries} % Article title formatting
 \posttitle{\end{center}} % Article title closing formatting
-\title{Comparación de despliegue de un gestor de base de datos NoSQL mediante Docker} % Article title
+\title{Comparación de Despliegue de un Gestor de Base de Datos NoSQL Mediante Docker} % Article title
 \author{%
 \textsc{Marko Antonio Rivas Rios} \\[1ex] % Your name
 \textsc{Jorge Luis Mamani Maquera} \\[1.01ex] % Your name
@@ -114,201 +114,132 @@ En este trabajo veremos cómo usar Docker para el desarrollo de aplicaciones sen
 \textbf{}\\
 Ahora, cuando el software se distribuye en contenedores, los desarrolladores tienen plena libertad para decidir qué aplicaciones necesitan. Como resultado, incluso los entornos complejos, como los servidores de grades bases de datos e infraestructura de análisis complejos pueden crear instancias en cuestión de segundos. El desarrollo de software se hace más fácil y más eficaz.
 
-\section{Objetivos}
+\section{Materiales y Métodos}
 \begin{flushright}
 \begin{itemize}
-Se busca saber un poco mas sobre:
-\\
 %------------------------------------------------
 \textbf{}\\
-- Las bases de datos relacionales y no relacionales.
+\subsection{Creación de una base de datos NoSQL en docker}
 \textbf{}\\
-- Realizar comparaciones en cuanto funcionamiento, metodologias etc.
+
+
+\textbf{}\\
+\subsection{Inserción de datos y Consulta de datos (en una base de datos NOSQL)}
+\textbf{}\\
+
+
+
+\textbf{}\\
+\subsection{Comparacion de distintos tipos de base de datos NoSQL}
+\textbf{}\\
+
+
+\textbf{CouchDB: }\\ CouchDB es catalogado muchas veces como una base de datos NoSQL, un término que se hizo cada vez más popular a finales de 2009 y principios de 2010. Si bien este término es una caracterización más bien genérica de una base de datos, o almacén de datos, sí define claramente un descanso de SQL tradicional bases de datos. Una base de datos CouchDB carece de un esquema o estructuras de datos pre-definidos rígidos tales como tablas. \textbf{}\\
+Los datos almacenados en CouchDB es un documento (s) JSON. La estructura de los datos, o documento(s), puede cambiar dinámicamente para adaptarse a las necesidades cambiantes. 
+CouchDB es una base de datos que abarca por completo la web. Almacene sus datos con documentos JSON. Tenga acceso a sus documentos y consultar sus índices con su navegador web, a través de HTTP.Índice, combinar y transformar sus documentos con JavaScript. CouchDB funciona bien con la web moderna y aplicaciones móviles. Usted puede incluso servir aplicaciones web directamente de CouchDB. Y usted puede distribuir sus datos o sus aplicaciones, de manera eficiente mediante la replicación incremental de los CouchDB. CouchDB soporta configuraciones maestro-maestro con detección automática de conflictos. \textbf{}\\
+CouchDB viene con una serie de características, como la transformación de documentos sobre la marcha y notificaciones de cambio en tiempo real, que hace que el desarrollo de aplicaciones web una brisa. Incluso viene con un fácil utilizar la consola de administración web.\textbf{}\\
+\textbf{}\\
+ \textbf{Las principales características son las siguientes:}\\
+\textbf{}\\
+\textbf{•	Almacenamiento de documentos:}\\ Almacena los datos como documentos esto es, uno o más pares campo/valor expresados en JSON. Los valores de los campos pueden ser datos simples como cadenas de caracteres, números o fechas. Pero también se pueden usar listas ordenadas y vectores asociativos. Todos los documentos en una base de datos CouchDB tienen un identificador único y no requieren un esquema determinado.
+\textbf{}\\
+\textbf{}\\
+\textbf{•	Vistas e índices Map/Reduce:}\\
+ Los datos almacenados se estructuran por medio de vistas. En CouchDB, cada vista se construye por medio de una función JavaScript que actúa como la mitad Map de una operación map/reduce. La función recibe un documento y lo transforma en un único valor, retornándolo. CouchDB puede indexar vistas y mantener actualizados esos índices a medida que se agregan, eliminan o actualizan documentos.
+\textbf{}\\
+\textbf{•	Arquitectura distribuida con replicación: }\\
+Se diseñó con teniendo en mente la replicación bidireccional (o sincronización) y la operación off-line. Eso significa que múltiples réplicas pueden tener cada una sus propias copias de los mismos datos, modificarlas y luego sincronizar esos cambios en un momento posterior.
+\textbf{}\\
+\textbf{}\\
+\textbf{•	Interfaz REST:}\\
+ Todos los ítems tienen una URI única que queda expuesta vía HTTP. REST usa los métodos HTTP POST, GET, PUT y DELETE para las cuatro operaciones básicas CRUD (Create, Read, Update, Delete) con todos los recursos.
+\textbf{}\\
+\textbf{}\\
+\textbf{•	Consistencia Eventual:}\\
+ Garantiza consistencia eventual para poder ofrecer tanto disponibilidad como tolerancia a las particiones.
+\textbf{}\\
+\textbf{}\\
+\textbf{•	Hecha para operar offline:}\\
+ Puede replicar datos a dispositivos (como smartphones) que pueden quedar offline y manejar automáticamente la sincronización de los datos cuando el dispositivo vuelve a estar en línea.
+
+
+\textbf{}\\
+\textbf{}\\
+\textbf{}\\
+\textbf{}\\
+
+\textbf{Neo4j:}\\
+ Es una base de datos orientada a grafos escrita en Java, es decir la información se almacena de forma relacionada formando un grafo dirigido entre los nodos y las relaciones entre ellos. Se integra perfectamente con múltiples lenguajes como Java, PHP, Ruby, .Net,  Python, Node, Scala, etc. La base de datos está embebida en un servidor Jetty. Está especialmente indicada para modelar redes sociales y sistemas de recomendación.\textbf{}\\
+Se distribuye en dos versiones: la community edition (open source) y la Enterprise edition. Para hacer pruebas de concepto nos basta con la community edition pero si quieres sacarle todo el partido a Neo4j la opción enterprise es la más recomendable ya que permite ponerla en cluster, monitorización, backups en caliente y un sistema de cache de alto rendimiento, además de soporte de sus creadores.\textbf{}\\
+Otra de las ventajas que tiene Neo4j es que se pueden efectuar las consultas directamente a través de un API Rest lo que hace especialmente interesante su integración con aplicaciones web.
+\textbf{}\\
+\textbf{Principales características de neo4j:}\\
+\textbf{}\\
+•	Alto desempeño y alta disponibilidad (Escalamiento de lectura) Soporte sólido y real para transacciones ACID.
+\textbf{}\\
+•	Escalable: 32 miles de millones de Nodos, 32 miles de millones de Relaciones, 64 miles de millones de Propiedades.
+\textbf{}\\
+•	Servidor con una API REST o usable como una biblioteca Java.
+
+
+\textbf{}\\
+\textbf{}\\
+\textbf{}\\
+\section{Resultados}
+\textbf{Comparaciones de 2 Bases de Datos NoSQL}\\
+\subsection{Grafos}
+
+
+\textbf{}\\
+\textbf{}\\
+\textbf{}\\
+\textbf{}\\
+
+
+
+\subsection{ Tabular (Column-Store)}
+
+\textbf{}\\
+\textbf{}\\
+\textbf{}\\
+\textbf{}\\
+
+
+
+\subsection{Documental}
+\textbf{}\\
+\textbf{}\\
+\textbf{}\\
+\textbf{}\\
+
+
+
+
+\subsection{Clave-Valor }
+\textbf{}\\
+\textbf{}\\
+\textbf{}\\
+\textbf{}\\
 
 
 
 
 
 
-
-\section{SQL y NoSQL}
-
-\subsection{Base de datos SQL}
-
-Structured Query language (SQL) o lenguaje de consulta estructurada, utiliza un estándar para manipular el contenido de las bases de datos relacionales. Cuenta con su propio lenguaje para consultar, insertar, actualizar y eliminar registros de la base de datos.\textbf{}\\
-Se compone de una o varias tablas y cada tabla puede contener múltiples relaciones. En el siguiente elemento pongo como ejemplo en como está estructurada una sencilla base de datos por medio de tablas.
-\textbf{}\\
-
-\includegraphics[scale=0.5]{sql1}
-\textbf{}\\
-Las tablas representan la entidad de cada modelo de datos. Las relaciones permiten garantizar la persistencia de datos, evita la duplicidad de datos y controla la eliminación en cascada. Para ingresar un nuevo nuevo evento, bastaría con ingresar un nuevo registro en la tabla events.\textbf{}\\
-SQL cuenta con un lenguaje de alto nivel que permite manipular la base de datos casi de cualquier forma. Por su manera de operar ayuda a mantener la integridad de los datos.
-\textbf{}\\
-\textbf{}\\
-\textbf{}\\
-\textbf{}\\
+\section{Discusión}
 \textbf{}\\
 \textbf{}\\
 \textbf{}\\
 \textbf{}\\
 
- Por ejemplo:
-\textbf{}\\
-\textbf{}\\
-Para obtener la lista de todos los deportes
-SELECT id, name FROM sports
-\textbf{}\\
-\textbf{Ingresar varios registros a la tabla categoría}\\
-\textbf{}\\
-INSERT INTO categories VALUES (Varonil, Femenil, mixto)
-\textbf{}\\
-\textbf{Su uso es más frecuente es en sistemas donde se necesite cuidar la integridad de datos como los bancos, sistemas de ventas, hospitales, CMS como WordPress.}\\
-\textbf{}\\
-\textbf{}\\
-Ejemplos de sistemas de gestión de base de datos son: MySQL, MariaDB, PostgreSQL.\textbf{}\\
-
-
-\subsection{Base de datos NoSQL}
-
-También existen otros mecanismos de almacenamientos alternativos a las base de datos relacionales que se definen por tablas. Este tipo de base de datos, se apoyan en otros formatos. Los NOSQL son más adecuados para aquellos que manejan grandes volúmenes de datos. Es por eso que empresas como Facebook, Google, Amazon, Twitter, entro otros han popularizado estos tipos de base de datos.\textbf{}\\
-\textbf{}\\
-Esas empresas tenían que enfrentarse a grandes desafíos motivados a la alta demanda de internet. Donde surge la necesidad de proporcionar información de grandes volúmenes de datos e indeterminado número de usuarios en el menor tiempo posible. Esas compañías se dieron cuenta que podían sacrificar la consistencia de los datos que garantiza una base de datos relacional para poder obtener un mejor rendimiento y ofrecer soluciones en tiempo real.\textbf{}\\
-\textbf{}\\
-\textbf{}\\
-Los puedes usar en soluciones donde requieres interactuar con datos en tiempo real como en un chat, para análisis estadísticos donde procesas mucha información o incluso en blogs.
-Algunos tipos de bases de datos NoSQL incluyen diferentes tipos de almacenamiento, por ejemplo: con columnas, documentos, key value store, gráficos, objetos (JSON), XML y otros modos de almacenamiento de datos.
-\textbf{}\\
-\textbf{}\\
-
-\includegraphics[scale=0.3]{sqlynosql}
-
-\textbf{}\\
-\subsection{Formatos}
-
-La información puede organizarse en tablas o en documentos. Cuando organizamos información en un Excel, lo hacemos en formato tabla y, cuando los médicos hacen fichas a sus pacientes, están guardando la información en documentos. Lo habitual es que las bases de datos basadas en tablas sean bases de datos relacionales y las basadas en documentos sean no relacionales, pero esto no tiene que ser siempre así. En realidad, una tabla puede transformarse en documentos, cada uno formado por cada fila de la tabla. Solo es una cuestión de visualización.
-\textbf{}\\
-\includegraphics[scale=0.5]{nosql1}
-\textbf{}\\
-Los dos esquemas de la imagen contienen exactamente la misma información. Lo único que cambia aquí es el formato: cada documento de la figura de la derecha es una fila de la figura de la izquierda.
-\textbf{}\\
-\textbf{}\\
-Se ve más claro en la tabla, ¿verdad? Lo que pasa es que a menudo en una base de datos no relacional una unidad de datos puede llegar a ser demasiado compleja como para plasmarlo en una tabla. \textbf{}\\
-\textbf{}\\
-\textbf{}\\
-Por ejemplo, en el documento JSON de la imagen que se muestra a continuación, al tener elementos jerárquicos, es más difícil plasmarlo en una tabla plana. Una solución sería plasmarlo en varias tablas y, por tanto, necesitar de relaciones.
-
-
-\includegraphics[scale=0.5]{nosql2}
-
-Esto explica por qué las bases de datos relacionales suelen servirse de tablas y las no relacionales de documentos JSON. En cualquier caso, a día de hoy, \textbf{las bases de datos más competitivas suelen permitir, de una forma u otra, operaciones de los dos tipos.}\\ 
-\textbf{}\\
- Por ejemplo, el servicio de base de datos en la nube BigQuery que ofrece Google es, en principio, una base de datos de lenguaje de consulta SQL, por lo que permite fácilmente relacionar varias tablas, pero, a su vez, permite insertar elementos jerárquicos JSON, más propios de bases de datos no relacionales.
-
-\textbf{}\\
-\textbf{}\\
-\textbf{La diferencia entre el éxito y el fracaso recae, sobre todo, en el diseño del modelo.}\\  Es decir, si se decide que el mejor enfoque es usar una base de datos relacional, no es suficiente con meter la información a lo bruto en una base de datos relacional y esperar a que se relacione sola, porque eso no va a ocurrir. De nada sirve elegir la base de datos más apropiada para nuestro sistema, si luego no se hace un buen diseño.
-
-\textbf{}\\
-\textbf{}\\
 
 
 
-\subsection{Ventajas y Desventajas de SQL y NoSQL}
-\textbf{Ventajas de las Bases de Datos relacionales}\\
-
--	Está más adaptado su uso y los perfiles que las conocen son mayoritarios y más baratos.\\
-\textbf{}\\
--	Debido al largo tiempo que llevan en el mercado, estas herramientas tienen un mayor soporte y mejores suites de productos y add-ons para gestionar estas bases de datos.\\
-\textbf{}\\
--	La atomicidad de las operaciones en la base de datos. Esto es, que en estas bases de datos o se hace la operación entera o no se hace utilizando la famosa técnica del rollback.\\
-\textbf{}\\
--	Los datos deben cumplir requisitos de integridad tanto en tipo de dato como en compatibilidad.\\
-\textbf{}\\
-\textbf{}\\
-\textbf{}\\
-\textbf{}\\
-\textbf{}\\
-\textbf{Desventajas de las Bases de Datos relacionales}\\
-
--	La atomicidad de las operaciones juega un papel crucial en el rendimiento de las bases de datos.\\
-\textbf{}\\
--	Escalabilidad, que aunque probada en muchos entornos productivos suele, por norma, ser inferior a las bases de datos NoSQL.\\
-
-\textbf{}\\
-\textbf{-------------------------------------------------------}\\
-
-\textbf{Ventajas de una base de datos NoSQL}\\
-\textbf{}\\
--	La escalabilidad y su carácter descentralizado. Soportan estructuras distribuidas.\\
-\textbf{}\\
-
--	Suelen ser bases de datos mucho más abiertas y flexibles. Permiten adaptarse a necesidades de proyectos mucho más fácilmente que los modelos de Entidad Relación.\\
-\textbf{}\\
-
--	Se pueden hacer cambios de los esquemas sin tener que parar bases de datos.\\
-\textbf{}\\
--	Escalabilidad horizontal: son capaces de crecer en número de máquinas, en lugar de tener que residir en grandes máquinas.\\
-\textbf{}\\
--	Se pueden ejecutar en máquinas con pocos recursos.\\
-\textbf{}\\
--	Optimización de consultas en base de datos para grandes cantidades de datos.\\
-
-\textbf{}\\
-\textbf{}\\
-\textbf{Desventajas de una base de datos NoSQL}\\
-
--	No todas las bases de datos NoSQL contemplan la atomicidad de las instrucciones y la integridad de los datos. Soportan lo que se llama consistencia eventual.\\
-\textbf{}\\
--	Problemas de compatibilidad entre instrucciones SQL. Las nuevas bases de datos utilizan sus propias características en el lenguaje de consulta y no son 100 por ciento compatibles con el SQL de las bases de datos
- relacionales. El soporte a problemas con las queries de trabajo en una base de datos NoSQL es más complicado.
-\textbf{}\\
--	Falta de estandarización. Hay muchas bases de datos NoSQL y aún no hay un estándar como sí lo hay en las bases de datos relacionales. Se presume un futuro incierto en estas bases de datos.\\
-\textbf{}\\
--	Soporte multiplataforma. Aún quedan muchas mejoras en algunos sistemas para que soporten sistemas operativos que no sean Linux.\\
-\textbf{}\\
--	Suelen tener herramientas de administración no muy usables o se accede por consola.\\
-
-\textbf{}\\
-\textbf{}\\
-
-\subsection{SQL Vs NoSQL }
-\textbf{Cuándo utilizar qué tipo de base de datos}\\
-\textbf{}\\
--	Cuando los datos deben ser consistentes sin dar posibilidad al error utilizar una base de datos relacional, SQL.\\
-\textbf{}\\
--	Cuando nuestro presupuesto no se puede permitir grandes máquinas y debe destinarse a máquinas de menor rendimiento, NoSQL.\\
-\textbf{}\\
--	Cuando las estructuras de datos que manejamos son variables, NoSQL.\\
-\textbf{}\\
--	Análisis de grandes cantidades de datos en modo lectura, NoSQL.\\
-\textbf{}\\
--	Captura y procesado de eventos, NoSQL.\\
-\textbf{}\\
--	Tiendas online con motores de inteligencia complejos, NoSQL.\\
-\textbf{}\\
-
-Es muy importante en este punto insistir en que, aunque parece que en estos momentos lo suyo es migrar a bases de datos NoSQL, debemos tener muy en cuenta antes de tomar esta decisión si las características de nuestra base de datos necesitan una base de datos NoSQL o relacional.
-Una base de datos NoSQL incluye simplicidad de diseño, escala horizontal más simple para grupos de máquinas y un mejor control de la disponibilidad.
-
-\section{¿Cuándo debería usarse NoSQL?}
-
-Cuando gran cantidad de datos necesitan ser almacenados y recuperados.
-La relación entre los datos que almacenas no es tan importante
-Los datos cambian con el tiempo y no están estructurados.
-No se requiere soporte de restricciones y uniones a nivel de base de datos
-Los datos crecen continuamente y usted necesita escalar la base de datos regularmente para manejar los datos.
-
-
-\textbf{}\\
-\textbf{}\\
-\textbf{}\\
 \section{Conclusiones}
-Un NoSQL originalmente referido a no SQL o no relacional es una base de datos que proporciona un mecanismo para el almacenamiento y recuperación de datos. Estos datos se modelan en medios distintos a las relaciones tabulares utilizadas en las bases de datos relacionales. 
-Siempre es bueno evaluar las diferentes alternativas que ofrece el mundo del software, para poder dar solución a muchas de los requerimientos que se presentan en el medio, pero siempre hay que considerar que cualquier solución de software que se seleccione va a tener sus ventajas y desventajas al momento de su desarrollo como también en la operación.\textbf{}\\
 \textbf{}\\
-La aparición del nuevo NoSQL es relativamente nueva, todavía le queda mucho tiempo para poder afirmar si es la solución a muchos de los problemas que hoy en día se presentan en el mundo de la base de datos, una de las ventajas muy importantes que ofrece NoSQL es que puede manejar grandes cantidades de información, pudiendo devolver el resultado de una consulta en cuestión de segundo, cuando un manejador tradicional RDBMS puede tardar 1000 veces mas el tiempo que el anterior haya resuelto. \textbf{}\\
 \textbf{}\\
-Antes de tomar la decisión de migrar una base de datos relacional a una no relacional hay que considerar todos estos puntos ventajas y desventajas para no caer en un punto del cual ya no se puede regresar y no tener perdidas de información importantes.
+\textbf{}\\
+\textbf{}\\
 
 
 

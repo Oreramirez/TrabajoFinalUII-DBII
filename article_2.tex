@@ -265,28 +265,72 @@ Otra de las ventajas que tiene Neo4j es que se pueden efectuar las consultas dir
 
 
 
-\subsection{Documental}
-\textbf{}\\
-\textbf{}\\
-\textbf{}\\
-\textbf{}\\
+\subsection{Base de datos Documental}
+
+\textbf{}\\Una base de datos documental, también llamada una base de datos orientada a documentos u tienda de documentos, es un subconjunto de un tipo de base de datos NoSQL.
+Algunos almacenes de documentos también pueden ser bases de datos de valores clave. Una base de datos de documentos se utiliza para almacenar, recuperar y administrar datos semiestructurados.
+A diferencia de las bases de datos relacionales tradicionales, el modelo de datos en una base de datos de documentos no está estructurado en un formato de tabla de filas y columnas.
+El esquema puede variar, proporcionando mucha más flexibilidad para el modelado de datos que las bases de datos relacionales.
+Las bases de datos documental almacena cada registro y sus datos asociados en un solo documento. Cada documento contiene datos semiestructurados que pueden ser consultados con el uso de varias herramientas de consulta y análisis del DBMS.
 
 
 
+\textbf{Funcionamiento}\\
+Una base de datos de documentos utiliza documentos como la estructura para almacenamiento y consultas. En este caso, el término "documento" puede referirse a un documento de texto, pero comúnmente es un archivo de XML o JSON. En lugar de columnas con nombres y tipos de datos que se utilizan en una base de datos relacional, un documento contiene una descripción del tipo de datos y el valor de esa descripción.
 
-\subsection{Clave-Valor }
-\textbf{}\\
-\textbf{}\\
-\textbf{}\\
-\textbf{}\\
+\textbf{Ejemplo de Base de Datos Documental en XML}\\
+\includegraphics[scale=0.7]{Imagenes/EjemploDocumental.png}
+
+\textbf{Ejemplo de Base de Datos Documental en Json}\\
+\includegraphics[scale=0.7]{Imagenes/EjemploDocumentalJson.png}
+
+\textbf{Beneficios}\\
+Las tiendas de documentos ofrecen importantes ventajas cuando se requieren características específicas, que incluyen:
+Modelado flexible de datos: a medida que las aplicaciones web, móviles, sociales e IoT cambian la naturaleza de los modelos de datos de aplicaciones, las bases de datos de documentos eliminan la necesidad de forzar modelos de datos relacionales para admitir nuevos tipos de modelos de datos de aplicaciones.
+Rendimiento de escritura rápido: a diferencia de las bases de datos relacionales tradicionales, algunas bases de datos de documentos priorizan la disponibilidad de escritura sobre la estricta consistencia de los datos. Esto garantiza que las escrituras siempre serán rápidas, incluso si una falla en una parte del hardware o de la red da como resultado un pequeño retraso en la replicación de datos y la coherencia en todo el entorno.
+Rendimiento rápido de consultas: muchas bases de datos de documentos tienen potentes motores de búsqueda y funciones de indexación que proporcionan capacidades de consulta rápidas y eficientes.
 
 
+\subsection{Base de Datos Valor - Clave}
+\textbf{}\\Una base de datos de valores-clave (también conocida como almacén de valores-clave y base de datos key-value) es un tipo de base de datos NoSQL que utiliza un método simple de clave / valor para almacenar datos.
+La parte clave-valor se refiere al hecho de que la base de datos almacena datos como una colección de pares clave / valor. Este es un método simple de almacenar datos, y se sabe que escala bien.
+El par clave-valor es un concepto bien establecido en muchos lenguajes de programación. Los lenguajes de programación normalmente se refieren a una clave-valor como una matriz asociativa o estructura de datos. Un valor-clave también se conoce comúnmente como diccionario o hash.
+Un store de valores-clave o una base de datos de valores-clave es una base de datos simple que usa un arreglo asociativo (piensa en un mapa o diccionario) como el modelo de datos fundamental donde cada clave está asociada con un solo valor en una colección. Esta relación se conoce como un par clave-valor.
+
+\textbf{Ejemplos de base de datos clave-valor}\\
+A continuación hay ejemplos de tiendas de valores clave.
+Estos son ejemplos simples, pero el objetivo es proporcionar una idea de cómo funciona una base de datos clave-valor.
+
+\includegraphics[scale=0.7]{Imagenes/ClaveValor.png}
+
+\textbf{¿Qué tipo de datos se pueden almacenar en una base de datos clave-valor?}\\
+
+\textbf{La clave}\\
+La clave en un par clave-valor debe (o al menos, debería) ser única. Este es el identificador único que le permite acceder al valor asociado con esa clave.
+En teoría, la clave podría ser cualquier cosa. Pero esto puede depender del DBMS. Un DBMS puede imponer limitaciones mientras que otro puede imponer ninguno.
+En Redis, por ejemplo, el tamaño de clave máximo permitido es 512 MB. Puede usar cualquier secuencia binaria como clave, desde una secuencia de texto corta hasta el contenido de un archivo de imagen. Incluso la cadena vacía es una clave válida.
+Sin embargo, por motivos de rendimiento, debe evitar tener una clave demasiado larga.
+Pero una clave demasiado corta también puede causar problemas de legibilidad. En cualquier caso, la clave debe seguir una convención convenida para mantener las cosas consistentes.
+
+\textbf{El valor}\\
+
+El valor en un almacén de clave-valor puede ser cualquier cosa, como texto (largo o corto), un número, código de marcado como HTML, código de programación como PHP, una imagen, etc.
+El valor también podría ser una lista, o incluso otro par clave-valor encapsulado en un objeto.
+Algunos DBMS de almacenamiento de claves le permiten especificar un tipo de datos para el valor. Por ejemplo, puede especificar que el valor sea un entero. Otros DBMS no proporcionan esta funcionalidad y, por lo tanto, el valor podría ser de cualquier tipo.
+
+\textbf{¿Para qué se puede usar una base de datos de valores-clave?}\\
+
+Las bases de datos de valores clave se pueden aplicar a muchos escenarios. Por ejemplo, las tiendas de valores clave pueden ser útiles para almacenar cosas como las siguientes.
 
 
 
 
 \section{Discusión}
-\textbf{}\\
+
+
+
+
+
 \textbf{}\\
 \textbf{}\\
 \textbf{}\\

@@ -86,13 +86,15 @@
 \date{Junio 22, 2019} % Leave empty to omit a date
 \renewcommand{\maketitlehookd}{%
 \begin{abstract}
+\begin{center}
+\textbf{Resumen}
+\end{center}
+\noindent Docker es un proyecto open source creado en 2013 y que ha supuesto una revolución para el desarrollo y despliegue de operaciones. Docker abstrae el hardware y el sistema operativo del host ejecutando las aplicaciones en contenedores, compartimentos aislados que contienen todos los recursos para una aplicación o servicio. En este trabajo veremos cómo usar Docker para el desarrollo de aplicaciones sencillas, aprendiendo a desplegar una base de datos NOSQL con Docker.
+\begin{center}
+\textbf{Abstract}
+\end{center}
 \noindent Docker is an open source project created in 2013 and which has been a revolution for the development and deployment of operations. Docker abstracts the host's hardware and operating system by running the applications in containers, isolated compartments that contain all the resources for an application or service.
 In this work we will see how to use Docker for the development of simple applications, learning how to deploy a NOSQL database with Docker.
-\end{abstract}
-\begin{abstract}
-\noindent Docker es un proyecto open source creado en 2013 y que ha supuesto una revolución para el desarrollo y despliegue de operaciones. Docker abstrae el hardware y el sistema operativo del host ejecutando las aplicaciones en contenedores, compartimentos aislados que contienen todos los recursos para una aplicación o servicio.
-
-En este trabajo veremos cómo usar Docker para el desarrollo de aplicaciones sencillas, aprendiendo a desplegar una base de datos NOSQL con Docker.
 \end{abstract}
 }
 
@@ -115,9 +117,22 @@ En este trabajo veremos cómo usar Docker para el desarrollo de aplicaciones sen
 Ahora, cuando el software se distribuye en contenedores, los desarrolladores tienen plena libertad para decidir qué aplicaciones necesitan. Como resultado, incluso los entornos complejos, como los servidores de grades bases de datos e infraestructura de análisis complejos pueden crear instancias en cuestión de segundos. El desarrollo de software se hace más fácil y más eficaz.
 
 \section{Materiales y Métodos}
+\subsection{Materiales}
+	\begin{itemize}
+		\item Virtualización activada en el BIOS
+		\item Docker Desktop
+		\item Windows 10 64bit: Pro, Enterprise o Education, con al menos 4GB de RAM.
+	\end{itemize}
+\subsection{Métodos}
+	\begin{itemize}
+		\item Se utilizo como material artículos y libros relacionados a la base de datos NoSQL y sus tipos, así como páginas web.
+	\end{itemize}
 \begin{flushright}
 \begin{itemize}
 %------------------------------------------------
+
+\section{Marco Teórico}
+
 \textbf{}\\
 \subsection{Creación de una base de datos NoSQL en docker}
 \textbf{}\\
@@ -125,12 +140,50 @@ Ahora, cuando el software se distribuye en contenedores, los desarrolladores tie
 
 \textbf{}\\
 \subsection{Inserción de datos y Consulta de datos (en una base de datos NOSQL)}
+\begin{center}
+		\includegraphics[width=9cm]{./Imagenes/6}
+		\end{center}	
 \textbf{}\\
-
+Existen varias diferencias con respecto a cómo los distintos tipos de bases de datos permiten a los usuarios / aplicaciones realizar consultas. Desde las consultas más básicas por clave primaria, como por ejemplo, los almacenes clave – valor, pasando por otros que ofrecen un acceso a la información algo más complejo. En este terreno se encontrarían las bases de datos documentales.
+\begin{center}
+		\includegraphics[width=9cm]{./Imagenes/1}
+		\end{center}	
+\textbf{}\\
+En general, la flexibilidad y la riqueza de las querys no son demasiado elevadas, puesto que lo que se prima por encima de las consultas es el rendimiento y la escalabilidad, por lo que es habitual que se delegue a la aplicación el implementar opciones más avanzadas en este terreno.
+\textbf{}\\
+Un método de consulta llamado Companion SQL database consiste en tener una base de datos auxiliar (que puede ser una base de datos SQL o una TextDB) de forma que se utilice esta secundaria para almacenar ciertos metadatos importantes para realizar la búsqueda, y se empleen para facilitar la búsqueda posterior en el contenedor NoSQL.
+\begin{center}
+		\includegraphics[width=9cm]{./Imagenes/2}
+		\end{center}	
+\textbf{}\\
+Búsqueda local dispersa. Otra forma de realizar consultas consiste en, puesto que se tiene el conjunto de datos repartido entre los distintos servidores, repartir de igual modo la consulta, de forma que cada servidor ejecute localmente cada consulta y reenvíe los
+resultados a un nodo maestro, que sería el encargado de juntar todos los resultados y presentárselos a la aplicación.
+\textbf{}\\
+Arboles B+ Distribuidos.
+\textbf{}\\
+Una forma eficiente de acelerar las búsquedas consiste en mantener un árbol B+ que forme un índice de entradas a la base de datos NoSQL (Aquilera, Golab and Shah 2008).
+\textbf{}\\
+El procedimiento consistiría en sacar los valores hash de los atributos que nos interese indexar, y construir con ellos el árbol B+. Cuando se quiera realizar una consulta, se comenzará desde la raíz y se irá descendiendo en orden hasta llegar a la hoja correspondiente, que nos dará la entrada concreta donde se encuentra el registro que se está buscando.
+\begin{center}
+		\includegraphics[width=9cm]{./Imagenes/3}
+		\end{center}	
+\textbf{}\\
+Al tratarse de un árbol B+, se debe tener en cuenta las particularidades de este tipo de estructura de datos a la hora de realizar los mantenimientos necesarios, las inserciones y borrados que puedan hacer redimensiones en el árbol, etc.
 
 
 \textbf{}\\
 \subsection{Comparacion de distintos tipos de base de datos NoSQL}
+\textbf{}\\Dependiendo de la forma en la que almacenen la información, nos podemos encontrar varios tipos
+distintos de bases de datos NoSQL. Veamos los tipos más utilizados.
+ \begin{itemize}
+		\item Bases de datos clave – valor
+                     \item Bases de datos documentales
+		\item Bases de datos en grafo
+		\item Bases de datos orientadas a objetos
+	           \end{itemize}
+\begin{center}
+		\includegraphics[width=9cm]{./Imagenes/7}
+		\end{center}	
 \textbf{}\\
 
 

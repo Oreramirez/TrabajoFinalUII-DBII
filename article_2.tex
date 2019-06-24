@@ -134,7 +134,7 @@ Ahora, cuando el software se distribuye en contenedores, los desarrolladores tie
 \section{Marco Teórico}
 
 Docker es una tecnología de containers muy popular.
-¿No has usado containers? Sirven para desplegar aplicaciones en un entorno virtual aislado, pero sin el overhead de tener un Sistema Operativo (SO) nuevo como se tiene en una Virtual Machine (VM).
+¿No has usado containers? Sirven para desplegar aplicaciones en un entorno virtual aislado, pero sin el overhead de tener un Sistema Operativo (SO) nuevo como se tiene en una Virtual Machine (VM).\textbf{}\\
 La principal diferencia es que los containers virtualizan el SO en vez del hardware, como lo hace una VM. De esta forma un container usa menos espacio en disco (ya que no requiere una copia del SO), y es más ágil (ya que usa menos recursos del host para ejecutar).
 
 \textbf{}\\
@@ -142,88 +142,98 @@ La principal diferencia es que los containers virtualizan el SO en vez del hardw
 \textbf{}\\
 Instala Docker Desktop para Windows
 Docker Desktop para Windows es la Community Edition (CE) de Docker para Microsoft Windows. Para descargar Docker Desktop para Windows, diríjase a Docker Hub.
-
-Lo que hay que saber antes de instalar
+\textbf{}\\
+\textbf{}\\
+Lo que hay que saber antes de instalar es: \textbf{}\\
 README FIRST para los usuarios de Docker Toolbox y Docker Machine : Docker Desktop para Windows requiere Microsoft Hyper-V para ejecutarse. El instalador de Docker Desktop para Windows habilita Hyper-V para usted, si es necesario, y reinicia su máquina. Después de habilitar Hyper-V, VirtualBox ya no funciona, pero las imágenes de VirtualBox VM permanecen. Las máquinas virtuales de VirtualBox creadas con docker-machine(incluida la defaultque se crea normalmente durante la instalación de Toolbox) ya no se inician. Estas máquinas virtuales no se pueden usar en paralelo con Docker Desktop para Windows. Sin embargo, todavía puede utilizar docker-machinepara administrar máquinas virtuales remotas.
-
-Requisitos del sistema :
-Windows 10 64bit: Pro, Enterprise o Education (Build 15063 o posterior).
-La virtualización está habilitada en la BIOS. Normalmente, la virtualización está habilitada por defecto. Esto es diferente de tener Hyper-V habilitado. Para obtener más detalles, consulte La virtualización debe estar habilitada en Solución de problemas.
-Característica capaz de CPU SLAT.
-Al menos 4GB de RAM.
-
+\textbf{}\\
+\textbf{}\\
+\textbf{Requisitos del sistema :}\\
+- Windows 10 64bit: Pro, Enterprise o Education (Build 15063 o posterior).\textbf{}\\
+- La virtualización está habilitada en la BIOS. Normalmente, la virtualización está habilitada por defecto. Esto es diferente de tener Hyper-V habilitado. Para obtener más detalles, consulte La virtualización debe estar habilitada en Solución de problemas.\textbf{}\\
+- Característica capaz de CPU SLAT.\textbf{}\\
+- Al menos 4GB de RAM.\textbf{}\\
+\textbf{}\\
+\textbf{}\\
 Nota : Si su sistema no cumple con los requisitos para ejecutar Docker Desktop para Windows, puede instalar Docker Toolbox , que utiliza Oracle Virtual Box en lugar de Hyper-V.
-
+\textbf{}\\
+\textbf{}\\
 
 Lo que incluye la instalación de Docker Desktop para Windows : La instalación proporciona Docker Engine , Docker CLI client, Docker Compose , Docker Machine y Kitematic .
-Los contenedores y las imágenes creadas con Docker Desktop para Windows se comparten entre todas las cuentas de usuario en las máquinas donde está instalado. Esto se debe a que todas las cuentas de Windows usan la misma máquina virtual para crear y ejecutar contenedores.
-Los escenarios de virtualización anidados, como ejecutar Docker Desktop para Windows en una instancia de VMWare o Parallels, pueden funcionar, pero no hay garantías. Para obtener más información, consulte Ejecución de Docker Desktop para Windows en escenarios de virtualización anidados.
-
+Los contenedores y las imágenes creadas con Docker Desktop para Windows se comparten entre todas las cuentas de usuario en las máquinas donde está instalado. Esto se debe a que todas las cuentas de Windows usan la misma máquina virtual para crear y ejecutar contenedores.\textbf{}\\
+Los escenarios de virtualización anidados, como ejecutar Docker Desktop para Windows en una instancia de VMWare o Parallels, pueden funcionar, pero no hay garantías. Para obtener más información, consulte Ejecución de Docker Desktop para Windows en escenarios de virtualización anidados.\textbf{}\\
+\textbf{}\\
 Instalar la aplicación de escritorio Docker Desktop para Windows
-
+\textbf{}\\
 1.- Haga doble clic en Docker Desktop para Windows Installer.exe para ejecutar el instalador.
 Si aún no ha descargado el instalador ( Docker Desktop Installer.exe), puede obtenerlo en download.docker.com . Normalmente se descarga a su Downloadscarpeta, o puede ejecutarlo desde la barra de descargas recientes en la parte inferior de su navegador web.
-
-2.-iga el asistente de instalación para aceptar la licencia, autorice el instalador y continúe con la instalación.
+\textbf{}\\
+\textbf{}\\
+2.-Siga el asistente de instalación para aceptar la licencia, autorice el instalador y continúe con la instalación.
 Se le solicitará que autorice Docker.appcon su contraseña del sistema durante el proceso de instalación. Se necesita acceso privilegiado para instalar componentes de red, enlaces a las aplicaciones de Docker y administrar las máquinas virtuales de Hyper-V.
-
+\textbf{}\\
+\textbf{}\\
 3.-Haga clic en Finalizar en el cuadro de diálogo de instalación completa para iniciar Docker.
 
-
+\textbf{}\\
 Iniciar Docker Desktop para Windows
-
+\textbf{}\\
 Docker no se inicia automáticamente después de la instalación. Para iniciarlo, busque Docker, seleccione Docker Desktop para Windows en los resultados de búsqueda y haga clic en él (o presione Entrar).
-
+\textbf{}\\
 \begin{center}
-		\includegraphics[width=9cm]{./Imagenes/n1}
+		\includegraphics[width=9cm]{./Imagenes/n1.png}
 \end{center}	
+\textbf{}\\
 Cuando la ballena en la barra de estado se mantiene estable, Docker está en funcionamiento y accesible desde cualquier ventana de terminal.
 \begin{center}
-		\includegraphics[width=9cm]{./Imagenes/n2}
+		\includegraphics[width=9cm]{./Imagenes/n2.png}
 \end{center}	
+\textbf{}\\
 Si la ballena está oculta en el área de Notificaciones, haga clic en la flecha hacia arriba en la barra de tareas para mostrarla. Para obtener más información, consulte Configuración de Docker .
 Si acaba de instalar la aplicación, también recibe un mensaje emergente de éxito con los siguientes pasos sugeridos y un enlace a esta documentación.
+\textbf{}\\
 \begin{center}
-		\includegraphics[width=9cm]{./Imagenes/n3}
+		\includegraphics[width=9cm]{./Imagenes/n3.png}
 \end{center}	
 Cuando se complete la inicialización, seleccione Acerca de Docker en el ícono del área de Notificaciones para verificar que tiene la última versión.
 Está en funcionamiento con Docker Desktop para Windows.
+\textbf{}\\
 
-Creacion de base de datos NoSQL con MongoDB en Docker
+\textbf{Creacion de base de datos NoSQL con MongoDB en Docker}\\
 
+\textbf{}\\
+\textbf{Instalar MongoDB en Docker}\\
+\textbf{}\\
+- Ingresar sus credenciales creadas en Docker Hub para iniciar sesión en el aplicativo.Ubicar la aplicación PowerShell, ejecutarla como Administrador. En la ventana de comandos de PowerShell escribir lo siguiente.
+\textbf{}\\
 
-Instalar MongoDB en Docker
+- Para instalar MongoDB primero tenemos que ejecutar el siguiente codigo.
+\textbf{}\\
+- Verificar que el contenedor se este ejecutando correctamente mediante el comando:
+\textbf{}\\
+- Proceder a verificar la imagen con el siguiente comando:
+\textbf{}\\
+- Seguidamente ejecutar el comando.Como respuesta se visualiza a un ID que corresponde al contenedor:
+\textbf{}\\
 
-Ingresar sus credenciales creadas en Docker Hub para iniciar sesión en el aplicativo.Ubicar la aplicación PowerShell, ejecutarla como Administrador. En la ventana de comandos de PowerShell escribir lo siguiente.
-
-
-Para instalar MongoDB primero tenemos que ejecutar el siguiente codigo.
-
-Verificar que el contenedor se este ejecutando correctamente mediante el comando:
-
-Proceder a verificar la imagen con el siguiente comando:
-
-Seguidamente ejecutar el comando.Como respuesta
-se visualizar´a un ID que corresponde al contenedor:
-
-
-Para conectar  a nuestro localhost 
-
-Para exponer ese puerto para nuestro que podamos  acceder al contenedor
-
-
-
- MongoDB está preparado para escalar fácilmente de manera horizontal
-
- En PowerShell ejecutar el siguiente comando ,Verificar la eliminación del contenedor con ejecutando
+- Para conectar  a nuestro localhost 
+\textbf{}\\
+- Para exponer ese puerto para nuestro que podamos  acceder al contenedor
 
 
- ejecutar el comando:Como respuesta se visualizará un ID que corresponde al contenedor
+\textbf{ MongoDB está preparado para escalar fácilmente de manera horizontal}\\
 
+\textbf{}\\
+ - En PowerShell ejecutar el siguiente comando ,Verificar la eliminación del contenedor con ejecutando
+\textbf{}\\
 
- conectar  a nuestro localhost 
+ -ejecutar el comando:Como respuesta se visualizará un ID que corresponde al contenedor
 
- conexion de Mongo,instancia de Mongo Corriendo dentro de este contenedor docker 
+\textbf{}\\
+ - conectar  a nuestro localhost 
+\textbf{}\\
+ - conexion de Mongo,instancia de Mongo Corriendo dentro de este contenedor docker 
+
 
 
 \textbf{}\\
